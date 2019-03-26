@@ -1,0 +1,14 @@
+body {
+    background-image: url("../assets/images/forest-patrol.jpg");
+    background-size: 100%;
+ background-repeat: no-repeat;
+ background-position-x: 0;
+
+}
+* {
+	box-sizing: border-box;
+}
+.jumbotron {
+    max-height: 500px;
+    overflow: auto;
+}
