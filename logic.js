@@ -1,7 +1,21 @@
 $(document).ready(function () {
     makeButtons();
     $(document).on("click", ".topic", showMyGifs);
+    $(document).on("click", ".favorites", function () {
+        if (isFav == false) {
+            isFav = true;
+        }
+        alert("Sorry, that feature doesnt work yet!");
+
+
+        // $("#favs").append($(".figure-caption").prev().prev().clone());
+        // console.log($(".figure-caption").prev().prev());
+        // console.log(isFav);
+        // console.log();
+    })
 })
+
+
 
 var gifApp = ['space', 'bobs burgers', 'fluid painting', 'disney', 'sloth', 'koala', 'elephants', 'rick and morty', 'workout', 'aliens'];
 
@@ -74,7 +88,7 @@ function showMyGifs() {
                 topicGif.attr("data-still", response[i].images.fixed_height_small_still.url); //still state
                 topicGif.attr("data-animate", response[i].images.fixed_height_small.url); //animated state
                 topicGif.attr("data-state", "still"); // set initial state 
-                topicGif.addClass("data-favorite", isFav);
+                // topicGif.addClass("data-favorite", isFav);
                 topicGif.addClass("image");
                 (gifBlock).append(topicGif);
 
@@ -98,6 +112,7 @@ function showMyGifs() {
                 // $("#favs").text(localStorage.getItem("favorites")
                 // );
                 // })
+
 
                 var favBtn = $("<button>");
                 favBtn.addClass("btn btn-outline-dark btn-sm");
@@ -134,16 +149,6 @@ $(document).on("click", ".image", function () {
     else {
         $(this).attr('src', $(this).data('still'));
         $(this).attr('data-state', 'still')
-    }
-})
-$(document).on("click", ".favorites", function () {
-    if (isFav == false) {
-        isFav = true;
-
-
-        // $("#favs").append();
-        console.log(isFav);
-        // console.log();
     }
 });
 
